@@ -1,0 +1,25 @@
+main {
+  flex: 1 1 auto;
+  padding: 300px 16px 0 16px;
+}
+
+.page-wrap {
+  max-width: 1284px;
+  margin: 0 auto;
+}
+
+.section-title {
+  display: flex;
+  margin: 12px;
+}
+
+h2 {
+  display: inline;
+  background-color: var(--color-background-grey);
+  border-radius: var(--radius-title);
+  font-size: var(--font-medium);
+  font-weight: bold;
+  color: var(--color-typography-grey);
+  padding: 5px 8px;
+  margin: 0;
+}
