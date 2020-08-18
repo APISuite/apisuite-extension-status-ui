@@ -1,0 +1,186 @@
+.services {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.history {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  width: calc(33.3% - 2 * 12px);
+  min-width: 340px;
+  padding: 24px;
+  margin: 12px;
+  border-radius: var(--radius-card);
+  cursor: pointer;
+  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15);
+}
+
+.service-card:hover {
+  box-shadow: 0px 2px 13px rgba(0, 0, 0, 0.15);
+}
+
+.incident-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 0px;
+  margin: 0px 36px;
+  border-left: 1px solid var(--color-border);
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.incident-date {
+  font-size: var(--font-large);
+  color: var(--color-typography-black);
+  font-weight: bold;
+}
+
+.incident-log-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.incident-log-title p {
+  font-size: var(--font-medium);
+  color: var(--color-warning);
+  padding: 12px 8px;
+}
+
+.logs-wrapper {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--color-border);
+  padding: 0px 30px;
+  margin: 0px 36px;
+}
+
+.log-wrapper {
+  padding: 4px 0px;
+  font-size: var(--font-small);
+}
+
+.detail {
+  font-size: var(--font-detail);
+  padding: 8px 0px;
+}
+
+.log {
+  display: inline;
+}
+
+.description {
+  display: block;
+  min-width: 240px;
+}
+
+.history-filler {
+  height: 80px;
+  border-left: 1px solid var(--color-border);
+  margin-left: 36px;
+}
+
+@media (max-width: 1200px) {
+  .service-card {
+    width: calc(50% - 2 * 12px);
+  }
+
+  :root {
+    --min-width: 800px;
+  }
+}
+
+@media (max-width: 800px) {
+  .service-card {
+    width: calc(100% - 2 * 12px);
+  }
+
+  :root {
+    --min-width: 400px;
+  }
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+}
+
+.icon-small {
+  width: 18px;
+  height: 18px;
+}
+
+.icon-large {
+  width: 24px;
+  height: 24px;
+}
+
+.status-icon {
+  fill: var(--color-white);
+  flex: 0 0 auto;
+}
+
+.working {
+  fill: var(--color-success);
+}
+
+.working-banner {
+  background-color: var(--color-success);
+}
+
+.issues {
+  fill: var(--color-warning);
+}
+
+.issues-banner {
+  background-color: var(--color-warning);
+}
+
+.notworking {
+  fill: var(--color-error);
+}
+
+.notworking-banner {
+  background-color: var(--color-error);
+}
+
+.busy {
+  fill: var(--color-error);
+}
+
+.maintenance {
+  fill: #646464;
+}
+
+.calendar {
+  position: relative;
+  left: -14px;
+  fill: var(--color-accent-1);
+  z-index: 1;
+  background-color: var(--color-white);
+}
+
+.resolved {
+  color: var(--color-accent-1);
+}
+
+.investigating {
+  color: var(--color-investigating);
+}
+
+.status-wrapper {
+  padding-left: 12px;
+  flex: 1 1 auto;
+}
