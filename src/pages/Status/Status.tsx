@@ -37,7 +37,7 @@ const Status: React.FC = () => {
     fetchingOfServicesHistory();
   }, []);
 
-  /* 2 - Component construction based on fetched data */
+  /* 2 - Component construction once data has been fetched */
 
   React.useEffect(() => {
     const servicesCards = servicesData.map((serviceData) => {
@@ -57,9 +57,8 @@ const Status: React.FC = () => {
     const servicesHistorySections = servicesHistory.map((serviceHistory) => {
       return (
         <ServiceHistorySection
-          serviceName={serviceHistory.name}
-          serviceStatusDescription={serviceHistory.status}
-          serviceStatusCode={serviceHistory.code}
+          serviceName={serviceHistory.serviceName}
+          serviceHistoryLogs={serviceHistory.logs}
         />
       );
     });

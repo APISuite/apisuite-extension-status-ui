@@ -1,21 +1,38 @@
 // Main imports
 import React from "react";
 
-// Component imports
-import StatusIcon from "components/StatusIcon/StatusIcon";
-
 // Styling imports
 import "./styles.scss";
 
-interface ExpectedProps {
-  serviceName: string,
-  serviceStatusDescription: string,
-  serviceStatusCode: string,
+interface ServiceHistoryLogs {
+  latestStatus: string,
+  description: string,
+  statusChangeDate: string,
 };
 
-const ServiceHistorySection: React.FC<ExpectedProps> = ({ serviceName, serviceStatusDescription, serviceStatusCode }) => {
-  // Generating new sections, with their history within
-  return <></>;
+interface ExpectedProps {
+  serviceName: string,
+  serviceHistoryLogs: ServiceHistoryLogs[],
+};
+
+const ServiceHistorySection: React.FC<ExpectedProps> = ({ serviceName, serviceHistoryLogs }) => {
+  const logEntries = serviceHistoryLogs.map((logEntry) => {
+    return (
+      <div>
+        <h4>{logEntry.latestStatus}</h4>
+        <p>Description: {logEntry.description}</p>
+        <p>Date: {logEntry.statusChangeDate}</p>
+      </div>
+    );
+  });
+
+  return (
+    <div>
+      <h3>{serviceName}</h3>
+
+      {logEntries}
+    </div>
+  );
 }
 
 export default ServiceHistorySection;

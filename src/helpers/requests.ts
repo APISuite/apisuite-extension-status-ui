@@ -30,12 +30,12 @@ function getServicesHistory() {
         {
           latestStatus: "Resolved",
           description: "Peaberry bean makes for some awesome coffee. This incident has thus been resolved.",
-          statusChangeDate: "2020-03-28T13:14:03.354Z",
+          statusChangeDate: "2020-03-28 at 13:14:03",
         },
         {
           latestStatus: "Investigating",
           description: "Using Java coffee beans gives us some terrible-tasting coffee.",
-          date: "2020-03-27T21:22:53.354Z",
+          statusChangeDate: "2020-03-27 at 21:22:53",
         }
       ],
     },
@@ -45,12 +45,12 @@ function getServicesHistory() {
         {
           latestStatus: "Resolved",
           description: "Hit the thing with a hammer. Problem solved.",
-          date: "2020-02-12T17:56:33.354Z",
+          statusChangeDate: "2020-02-12 at 17:56:33",
         },
         {
           latestStatus: "Investigating",
           description: "Thermal paste perhaps in need of change.",
-          date: "2020-02-10T10:24:33.354Z",
+          statusChangeDate: "2020-02-10 at 10:24:33",
         }
       ],
     },
