@@ -1,21 +1,21 @@
 import React from "react";
 
-interface ExpectedProps {
-  serviceName: string,
-  serviceStatusCode: string,
-  serviceStatusDescription: string,
-};
+import StatusIcon from "components/StatusIcon/StatusIcon";
 
-const ServiceCard: React.FC<ExpectedProps> = ({ serviceName, serviceStatusCode, serviceStatusDescription }) => {
+import { ServiceCardProps } from "./types";
+
+import "./styles.scss";
+
+const ServiceCard: React.FC<ServiceCardProps> = ({ serviceName, serviceStatusDescription, serviceStatusCode }) => {
   return (
     <li className="service-card">
       <div className="description">
-        <h3>${serviceName}</h3>
-        <p>${serviceStatusDescription}</p>
+        <h3>{serviceName}</h3>
+        <p>{serviceStatusDescription}</p>
       </div>
 
-      <span className='${statusCode.toLowerCase()} icon'>
-        {/* <${StatusIcon} statusCode=${serviceStatusCode} /> */}
+      <span className={`${serviceStatusCode.toLowerCase()} icon`}>
+        <StatusIcon statusCode={serviceStatusCode} />
       </span>
     </li>
   );

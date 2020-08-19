@@ -1,0 +1,70 @@
+.service-card {
+  align-items: center;
+  border-radius: var(--radius-card);
+  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  display: flex;
+  height: 90px;
+  justify-content: space-between;
+  margin: 12px;
+  min-width: 340px;
+  padding: 24px;
+  position: relative;
+  width: 565px;
+}
+
+.service-card:hover {
+  box-shadow: 0px 2px 13px rgba(0, 0, 0, 0.15);
+}
+
+.description {
+  display: block;
+  min-width: 240px;
+}
+
+.icon {
+  height: 28px;
+  width: 28px;
+}
+
+.icon-small {
+  height: 18px;
+  width: 18px;
+}
+
+.icon-large {
+  height: 24px;
+  width: 24px;
+}
+
+.working {
+  fill: var(--color-success);
+}
+
+.working-banner {
+  background-color: var(--color-success);
+}
+
+.issues {
+  fill: var(--color-warning);
+}
+
+.issues-banner {
+  background-color: var(--color-warning);
+}
+
+.notworking {
+  fill: var(--color-error);
+}
+
+.notworking-banner {
+  background-color: var(--color-error);
+}
+
+.busy {
+  fill: var(--color-error);
+}
+
+.maintenance {
+  fill: #646464;
+}
