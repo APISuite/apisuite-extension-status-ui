@@ -1,12 +1,11 @@
 import React from "react";
 
-interface ExpectedProps {
-  statusCode: string,
-};
+import { StatusIconProps } from "./types";
 
-const StatusIcon: React.FC<ExpectedProps> = ({ statusCode }) => {
+const StatusIcon: React.FC<StatusIconProps> = ({ statusCode }) => {
   switch (statusCode.toLowerCase()) {
     case 'working':
+    case 'resolved':
       return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M0 0h24v24H0V0z" fill="none" />
@@ -30,6 +29,7 @@ const StatusIcon: React.FC<ExpectedProps> = ({ statusCode }) => {
         </svg>
       );
 
+    case 'investigating':
     case 'issues':
       return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

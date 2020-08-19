@@ -1,70 +1,56 @@
-// Main imports
 import React from "react";
-import { getServicesData, getServicesHistory } from "../../helpers/requests";
 
-// Component imports
-import ServiceCard from "../../components/ServiceCard";
-import ServiceHistorySection from "../../components/ServiceHistorySection";
+import ServiceCard from "components/ServiceCard";
+import ServiceHistory from "components/ServiceHistory";
 
-// Styling imports
+import { getServicesStatusData, getServicesHistoryData } from "helpers/requests";
+
 import "./styles.scss";
 
 const Status: React.FC = () => {
-  const [servicesData, setServicesData] = React.useState([]);
-  const [servicesHistory, setServicesHistory] = React.useState([]);
-  const [servicesCards, setServicesCards] = React.useState([]);
-  const [servicesHistorySections, setServicesHistorySections] = React.useState([]);
+  const [servicesStatusData, setServicesStatusData] = React.useState([]);
+  const [servicesHistoryData, setServicesHistoryData] = React.useState([]);
 
-  /* 1 - Fetching of relevant data */
+  const servicesStatusCards = servicesStatusData.map((serviceStatusData, index) => {
+    return (
+      <ServiceCard
+        key={index}
+        serviceName={serviceStatusData.name}
+        serviceStatusDescription={serviceStatusData.status}
+        serviceStatusCode={serviceStatusData.code}
+      />
+    );
+  });
+
+  const servicesHistory = servicesHistoryData.map((serviceHistoryData, index) => {
+    return (
+      <ServiceHistory
+        key={index}
+        serviceName={serviceHistoryData.serviceName}
+        serviceHistoryIncidents={serviceHistoryData.serviceIncidents}
+      />
+    );
+  });
 
   React.useEffect(() => {
-    const fetchingOfServicesData = async () => {
-      const currentServicesData = await getServicesData();
+    const fetchingOfServicesStatusData = async () => {
+      const currentServicesData = await getServicesStatusData();
 
-      setServicesData(currentServicesData);
+      setServicesStatusData(currentServicesData);
     };
 
-    fetchingOfServicesData();
+    fetchingOfServicesStatusData();
   }, []);
 
   React.useEffect(() => {
-    const fetchingOfServicesHistory = async () => {
-      const currentServicesHistory = await getServicesHistory();
+    const fetchingOfServicesHistoryData = async () => {
+      const currentServicesHistory = await getServicesHistoryData();
 
-      setServicesHistory(currentServicesHistory);
+      setServicesHistoryData(currentServicesHistory);
     };
 
-    fetchingOfServicesHistory();
+    fetchingOfServicesHistoryData();
   }, []);
-
-  /* 2 - Component construction once data has been fetched */
-
-  React.useEffect(() => {
-    const servicesCards = servicesData.map((serviceData) => {
-      return (
-        <ServiceCard
-          serviceName={serviceData.name}
-          serviceStatusDescription={serviceData.status}
-          serviceStatusCode={serviceData.code}
-        />
-      );
-    });
-
-    setServicesCards(servicesCards);
-  }, [servicesData]);
-
-  React.useEffect(() => {
-    const servicesHistorySections = servicesHistory.map((serviceHistory) => {
-      return (
-        <ServiceHistorySection
-          serviceName={serviceHistory.serviceName}
-          serviceHistoryLogs={serviceHistory.logs}
-        />
-      );
-    });
-
-    setServicesHistorySections(servicesHistorySections);
-  }, [servicesHistory]);
 
   return (
     <main className="page-wrap wrap">
@@ -74,7 +60,7 @@ const Status: React.FC = () => {
         </div>
 
         <div>
-          <ul>{servicesCards}</ul>
+          {servicesStatusCards.length > 0 ? <ul>{servicesStatusCards}</ul> : <p>No services currently in use.</p>}
         </div>
       </section>
 
@@ -86,7 +72,7 @@ const Status: React.FC = () => {
         </div>
 
         <div>
-          {servicesHistorySections}
+          {servicesHistory.length > 0 ? <ul>{servicesHistory}</ul> : <p>No services' history to show.</p>}
         </div>
       </section>
     </main>
