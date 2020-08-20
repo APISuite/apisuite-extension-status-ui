@@ -1,5 +1,7 @@
+import config from "./config";
+
 function getServicesStatusData() {
-  const URL = "https://sandbox-develop.apisuite.cloudoki.com/services"
+  const URL = config().someKey;
 
   return fetch(URL)
     .then((response) => {
