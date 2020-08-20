@@ -4,7 +4,7 @@ const menuConfig = {
   headerAuthenticated: {
     main: [
       {
-        label: "Status of Services",
+        label: "Status",
         route: "/extensions/status-of-services",
       },
     ],
