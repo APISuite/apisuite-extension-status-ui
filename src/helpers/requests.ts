@@ -29,8 +29,8 @@ function getServicesHistoryData() {
       serviceIncidents: [
         {
           latestStatus: "Resolved",
-          incident: "Java coffee beans makes for some odd-tasting coffee.",
-          solution: "Started using Peaberry coffee beans.",
+          incident: "Requests for coffee over Wi-Fi were not being fulfilled.",
+          solution: "Looked into, and fixed the machine's Wi-Fi configuration.",
           statusChangeDate: "2020-03-28T13:14:03.354Z",
         },
         {
@@ -45,11 +45,44 @@ function getServicesHistoryData() {
       serviceName: "Playstation",
       serviceIncidents: [
         {
-          latestStatus: "Investigating",
-          incident: "Everyone in the office (except me ofc) sucks at FIFA.",
-          solution: "Yet to be determined.",
+          latestStatus: "Resolved",
+          incident: "Console made some funny noises when playing.",
+          solution: "Hit the thing with a hammer, quiet ever since.",
           statusChangeDate: "2020-02-10T10:24:33.354Z",
         },
+      ],
+    },
+    {
+      serviceName: "Video Scraper",
+      serviceIncidents: [
+        {
+          latestStatus: "Investigating",
+          incident: "No video scraping requests are being fulfilled.",
+          solution: "Yet to be determined.",
+          statusChangeDate: "2020-02-01T12:45:13.354Z",
+        },
+      ],
+    },
+    {
+      serviceName: "Awesome API",
+      serviceIncidents: [
+        {
+          latestStatus: "Investigating",
+          incident: "No response from API when requesting for 'awesome'.",
+          solution: "Yet to be determined.",
+          statusChangeDate: "2020-01-29T16:24:33.354Z",
+        }
+      ],
+    },
+    {
+      serviceName: "Beer Tap",
+      serviceIncidents: [
+        {
+          latestStatus: "Investigating",
+          incident: "Beer is coming out warm.",
+          solution: "Yet to be determined.",
+          statusChangeDate: "2020-01-12T09:14:53.354Z",
+        }
       ],
     },
   ];

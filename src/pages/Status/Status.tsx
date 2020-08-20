@@ -64,8 +64,6 @@ const Status: React.FC = () => {
         </div>
       </section>
 
-      <br />
-
       <section className="past-incidents">
         <div className="section-title">
           <h2>Past incidents</h2>
