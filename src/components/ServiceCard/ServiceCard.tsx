@@ -10,8 +10,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ serviceName, serviceStatusDes
   const classes = useStyles();
 
   return (
-    <li className={classes["service-card"]}>
-      <div className={classes["service-card-description"]}>
+    <li className={classes[".service-card"]}>
+      <div className={classes[".service-card-description"]}>
         <h3>{serviceName}</h3>
         <p>{serviceStatusDescription}</p>
       </div>

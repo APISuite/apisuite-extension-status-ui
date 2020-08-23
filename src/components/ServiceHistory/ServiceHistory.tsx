@@ -31,13 +31,13 @@ const ServiceHistorySection: React.FC<ServiceHistoryProps> = ({ serviceName, ser
 
   return (
     <>
-      <button className={classes["service-accordion-button"]} onClick={handleAccordionClick}>
+      <button className={classes[".service-accordion-button"]} onClick={handleAccordionClick}>
         {serviceName}
       </button>
 
       {
         isAccordionOpen &&
-        <div className={classes["service-accordion-contents"]}>
+        <div className={classes[".service-accordion-contents"]}>
           {incidentCards}
         </div>
       }
