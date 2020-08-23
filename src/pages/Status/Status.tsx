@@ -5,16 +5,18 @@ import ServiceHistory from "components/ServiceHistory";
 
 import { getServicesStatusData, getServicesHistoryData } from "helpers/requests";
 
-import "./styles.scss";
+import useStyles from './styles';
 
 const Status: React.FC = () => {
+  const classes = useStyles();
+
   const [servicesStatusData, setServicesStatusData] = React.useState([]);
   const [servicesHistoryData, setServicesHistoryData] = React.useState([]);
 
   const servicesStatusCards = servicesStatusData.map((serviceStatusData, index) => {
     return (
       <ServiceCard
-        key={index}
+        key={`serviceCard${index}`}
         serviceName={serviceStatusData.name}
         serviceStatusDescription={serviceStatusData.status}
         serviceStatusCode={serviceStatusData.code}
@@ -25,7 +27,7 @@ const Status: React.FC = () => {
   const servicesHistory = servicesHistoryData.map((serviceHistoryData, index) => {
     return (
       <ServiceHistory
-        key={index}
+        key={`serviceHistory${index}`}
         serviceName={serviceHistoryData.serviceName}
         serviceHistoryIncidents={serviceHistoryData.serviceIncidents}
       />
@@ -53,9 +55,9 @@ const Status: React.FC = () => {
   }, []);
 
   return (
-    <main className="page-wrap wrap">
-      <section className="current-status">
-        <div className="section-title">
+    <main className={`${classes[".page-wrap"]} ${classes[".wrap"]}`}>
+      <section className={classes[".current-status"]}>
+        <div className={classes[".section-title"]}>
           <h2>Current status per service</h2>
         </div>
 
@@ -64,8 +66,8 @@ const Status: React.FC = () => {
         </div>
       </section>
 
-      <section className="past-incidents">
-        <div className="section-title">
+      <section className={classes[".past-incidents"]}>
+        <div className={classes[".section-title"]}>
           <h2>Past incidents</h2>
         </div>
 
@@ -75,6 +77,6 @@ const Status: React.FC = () => {
       </section>
     </main>
   );
-}
+};
 
 export default Status;

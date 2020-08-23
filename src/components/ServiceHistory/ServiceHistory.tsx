@@ -4,15 +4,17 @@ import HistoryCard from "components/HistoryCard";
 
 import { ServiceHistoryProps } from "./types";
 
-import "./styles.scss";
+import useStyles from './styles';
 
 const ServiceHistorySection: React.FC<ServiceHistoryProps> = ({ serviceName, serviceHistoryIncidents }) => {
+  const classes = useStyles();
+
   const [isAccordionOpen, setIsAccordionOpen] = React.useState(false);
 
   const incidentCards = serviceHistoryIncidents.map((incident, index) => {
     return (
       <HistoryCard
-        key={index}
+        key={`serviceHistoryCard${index}`}
         latestStatus={incident.latestStatus}
         incident={incident.incident}
         solution={incident.solution}
@@ -29,18 +31,18 @@ const ServiceHistorySection: React.FC<ServiceHistoryProps> = ({ serviceName, ser
 
   return (
     <>
-      <button className="service-accordion-button" onClick={handleAccordionClick}>
+      <button className={classes["service-accordion-button"]} onClick={handleAccordionClick}>
         {serviceName}
       </button>
 
       {
         isAccordionOpen &&
-        <div className="service-accordion-contents">
+        <div className={classes["service-accordion-contents"]}>
           {incidentCards}
         </div>
       }
     </>
   );
-}
+};
 
 export default ServiceHistorySection;

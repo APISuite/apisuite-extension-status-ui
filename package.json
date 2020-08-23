@@ -19,10 +19,12 @@
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0",
     "i18next": ">=19.0.1",
-    "react-i18next": ">=11.2.5"
+    "react-i18next": ">=11.2.5",
+    "@material-ui/styles": ">=4.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",
+    "@material-ui/styles": "^4.10.0",
     "@rollup/plugin-commonjs": "^11.1.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^7.1.3",

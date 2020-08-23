@@ -48,6 +48,6 @@ const StatusIcon: React.FC<StatusIconProps> = ({ statusCode }) => {
     default:
       return <svg></svg>;
   }
-}
+};
 
 export default StatusIcon;

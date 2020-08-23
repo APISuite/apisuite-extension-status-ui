@@ -1,5 +1,5 @@
 const baseConfig = {
-  someKey: "Base Value",
+  servicesStatusDataUrl: "Base Value",
 };
 
 export default baseConfig;
