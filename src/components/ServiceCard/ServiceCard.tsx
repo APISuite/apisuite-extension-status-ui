@@ -4,7 +4,6 @@ import StatusIcon from "components/StatusIcon/StatusIcon";
 
 import { ServiceCardProps } from "./types";
 
-//import "./styles.scss";
 import useStyles from "./styles";
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ serviceName, serviceStatusDescription, serviceStatusCode }) => {

@@ -1,27 +1,13 @@
 import { makeStyles } from '@material-ui/styles';
 
-const colorTypographyBlack = '#333333';
 const colorTypographyGrey = '#AAAAAA';
 const colorBackgroundGrey = '#F5F5F5';
-const fontLarge = '18px';
 const fontMedium = '16px';
-const fontSmall = '14px';
 const minWidth = '1200px';
 const radiusTitle = '9px';
 const wrapPadding = '0px 40px';
 
 const useStyles = makeStyles({
-  h3: {
-    color: colorTypographyBlack,
-    fontSize: fontLarge,
-    fontWeight: 'bold',
-    padding: '5px 0'
-  },
-  p: {
-    color: colorTypographyGrey,
-    fontSize: fontSmall,
-    padding: '5px 0'
-  },
   sectionTitle: {
     backgroundColor: colorBackgroundGrey,
     borderRadius: radiusTitle,

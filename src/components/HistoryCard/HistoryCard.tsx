@@ -4,7 +4,6 @@ import StatusIcon from "components/StatusIcon/StatusIcon";
 
 import { HistoryCardProps } from "./types";
 
-//import "./styles.scss";
 import useStyles from "./styles";
 
 const HistoryCard: React.FC<HistoryCardProps> = ({ latestStatus, incident, solution, statusChangeDate }) => {
