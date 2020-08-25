@@ -1,14 +1,24 @@
+import { Extension } from "apisuite-extension-ui-types";
 import "./translations";
-import * as hooks from "./hooks";
-import config from "./helpers/config";
+import hooks from "./hooks";
+import { ExtensionConfig } from "config";
+import configHelper from "./helpers/config";
 import { name, version } from "../package.json";
 
-export const init = ({ config: conf }) => {
-  config.set(conf);
-};
+class StatusExtension extends Extension {
+  static info = {
+    name,
+    version,
+  };
 
-export { hooks };
+  public config: ExtensionConfig;
 
-const extension = { name, version, hooks, init };
+  hooks = hooks;
 
-export default extension;
+  constructor(config?: ExtensionConfig) {
+    super(config);
+    configHelper.set(config);
+  }
+}
+
+export default StatusExtension;
