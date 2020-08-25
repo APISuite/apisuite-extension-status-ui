@@ -1,9 +1,15 @@
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@material-ui/styles';
 
-export default makeStyles(({
-  '.service-card': {
+const colorError = '#ff1515';
+const colorMaintenance = '#646464';
+const colorSuccess = '#14c762';
+const colorWarning = '#f5a623';
+const radiusCard = '5px';
+
+const useStyles = makeStyles({
+  serviceCard: {
     alignItems: 'center',
-    borderRadius: 'var(--radius-card)',
+    borderRadius: radiusCard,
     boxShadow: '0px 2px 7px rgba(0, 0, 0, 0.15)',
     cursor: 'pointer',
     display: 'flex',
@@ -13,60 +19,35 @@ export default makeStyles(({
     minWidth: '340px',
     padding: '24px',
     position: 'relative',
-    width: '565px'
-  },
-  '.service-card:hover': {
-    boxShadow: '0px 2px 13px rgba(0, 0, 0, 0.15)'
-  },
-  '.service-card-description': {
-    display: 'block',
-    minWidth: '240px',
-    h3: {
-      color: 'var(--color-typography-black)',
-      fontSize: 'var(--font-large)',
-      fontWeight: 'bold',
-      padding: '5px 0'
+    width: '565px',
+
+    '&:hover': {
+      boxShadow: '0px 2px 13px rgba(0, 0, 0, 0.15)'
     },
-    p: {
-      color: 'var(--color-typography-grey)',
-      fontSize: 'var(--font-small)',
-      padding: '5px 0'
-    }
   },
-  '.icon': {
+  serviceCardDescription: {
+    display: 'block',
+    minWidth: '240px'
+  },
+  icon: {
     height: '28px',
     width: '28px'
   },
-  '.icon-small': {
-    height: '18px',
-    width: '18px'
+  working: {
+    fill: colorSuccess
   },
-  '.icon-large': {
-    height: '24px',
-    width: '24px'
+  issues: {
+    fill: colorWarning
   },
-  '.working': {
-    fill: 'var(--color-success)'
+  notworking: {
+    fill: colorError
   },
-  '.working-banner': {
-    backgroundColor: 'var(--color-success)'
+  busy: {
+    fill: colorError
   },
-  '.issues': {
-    fill: 'var(--color-warning)'
-  },
-  '.issues-banner': {
-    backgroundColor: 'var(--color-warning)'
-  },
-  '.notworking': {
-    fill: 'var(--color-error)'
-  },
-  '.notworking-banner': {
-    backgroundColor: 'var(--color-error)'
-  },
-  '.busy': {
-    fill: 'var(--color-error)'
-  },
-  '.maintenance': {
-    fill: '#646464'
+  maintenance: {
+    fill: colorMaintenance
   }
-}));
+});
+
+export default useStyles;

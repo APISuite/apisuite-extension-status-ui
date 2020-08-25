@@ -5,7 +5,8 @@ import ServiceHistory from "components/ServiceHistory";
 
 import { getServicesStatusData, getServicesHistoryData } from "helpers/requests";
 
-import useStyles from './styles';
+//import "./styles.scss";
+import useStyles from "./styles";
 
 const Status: React.FC = () => {
   const classes = useStyles();
@@ -55,10 +56,10 @@ const Status: React.FC = () => {
   }, []);
 
   return (
-    <main className={`${classes[".page-wrap"]} ${classes[".wrap"]}`}>
-      <section className={classes[".current-status"]}>
-        <div className={classes[".section-title"]}>
-          <h2>Current status per service</h2>
+    <main className={`${classes.pageWrap} ${classes.wrap}`}>
+      <section className={classes.currentStatusSection}>
+        <div className={classes.sectionTitleContainer}>
+          <h2 className={classes.sectionTitle}>Current status per service</h2>
         </div>
 
         <div>
@@ -66,9 +67,9 @@ const Status: React.FC = () => {
         </div>
       </section>
 
-      <section className={classes[".past-incidents"]}>
-        <div className={classes[".section-title"]}>
-          <h2>Past incidents</h2>
+      <section className={classes.pastIncidentsSection}>
+        <div className={classes.sectionTitleContainer}>
+          <h2 className={classes.sectionTitle}>Past incidents</h2>
         </div>
 
         <div>

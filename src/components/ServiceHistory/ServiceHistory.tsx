@@ -4,7 +4,8 @@ import HistoryCard from "components/HistoryCard";
 
 import { ServiceHistoryProps } from "./types";
 
-import useStyles from './styles';
+//import "./styles.scss";
+import useStyles from "./styles";
 
 const ServiceHistorySection: React.FC<ServiceHistoryProps> = ({ serviceName, serviceHistoryIncidents }) => {
   const classes = useStyles();
@@ -31,13 +32,13 @@ const ServiceHistorySection: React.FC<ServiceHistoryProps> = ({ serviceName, ser
 
   return (
     <>
-      <button className={classes[".service-accordion-button"]} onClick={handleAccordionClick}>
+      <button className={classes.serviceAccordionButton} onClick={handleAccordionClick}>
         {serviceName}
       </button>
 
       {
         isAccordionOpen &&
-        <div className={classes[".service-accordion-contents"]}>
+        <div className={classes.serviceAccordionContents}>
           {incidentCards}
         </div>
       }

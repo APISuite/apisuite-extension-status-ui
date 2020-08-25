@@ -1,7 +1,7 @@
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@material-ui/styles';
 
-export default makeStyles(({
-  '.service-accordion-button': {
+const useStyles = makeStyles({
+  serviceAccordionButton: {
     backgroundColor: '#eee',
     borderRadius: '7.5px 7.5px 0 0',
     border: 'none',
@@ -15,21 +15,25 @@ export default makeStyles(({
     padding: '18px',
     textAlign: 'left',
     transition: '0.4s',
-    width: '586.5px'
+    width: '586.5px',
+
+    '&:hover': {
+      backgroundColor: '#ccc'
+    },
+
+    '&:after': {
+      color: 'rgb(92, 90, 90)',
+      content: '\'(click to show/hide all incidents)\'',
+      float: 'right',
+      fontSize: '10px',
+      fontWeight: 'lighter',
+      marginLeft: '5px'
+    },
   },
-  '.service-accordion-button:hover': {
-    backgroundColor: '#ccc'
-  },
-  '.service-accordion-button:after': {
-    color: 'rgb(92, 90, 90)',
-    content: '\'(click to show/hide all incidents)\'',
-    cssFloat: 'right',
-    fontSize: '10px',
-    fontWeight: 'lighter',
-    marginLeft: '5px'
-  },
-  '.service-accordion-contents': {
+  serviceAccordionContents: {
     marginBottom: '35px',
     transition: 'max-height 0.2s ease-out'
   }
-}));
+});
+
+export default useStyles;
