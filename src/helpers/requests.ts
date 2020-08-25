@@ -1,7 +1,7 @@
 import config from "./config";
 
 function getServicesStatusData() {
-  const URL = config().someKey;
+  const URL = config().servicesStatusDataUrl;
 
   return fetch(URL)
     .then((response) => {
