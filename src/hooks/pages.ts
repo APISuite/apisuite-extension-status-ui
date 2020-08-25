@@ -1,6 +1,7 @@
+import { HookPages, PageEntry } from "apisuite-extension-ui-types";
 import Status from "pages/Status";
 
-const pagesConfig = [
+const pagesConfig: PageEntry[] = [
   {
     auth: true,
     path: "/extensions/status-of-services",
@@ -9,6 +10,8 @@ const pagesConfig = [
   },
 ];
 
-export default function hookPages() {
+const hookPages: HookPages = () => {
   return pagesConfig;
-}
+};
+
+export default hookPages;

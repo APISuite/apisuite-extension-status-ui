@@ -1,20 +1,20 @@
-const menuConfig = {
-  footer: {},
-  headerAnonymous: [],
-  headerAuthenticated: {
-    main: [
-      {
-        label: "Status",
-        route: "/extensions/status-of-services",
-      },
-    ],
-  },
+import { Menus, MenuEntry, HookMenu } from "apisuite-extension-ui-types";
+
+type MenuConfig = {
+  [menu: string]: MenuEntry[];
 };
 
-export default function hookMenu(menu: string, section?: string) {
-  let menuEntry = menuConfig[menu];
-  if (menuEntry && section) {
-    menuEntry = menuEntry[section];
-  }
-  return menuEntry;
-}
+const menuConfig: MenuConfig = {
+  [Menus.HeaderAuthenticatedMain]: [
+    {
+      label: "Status",
+      route: "/extensions/status-of-services",
+    }
+  ]
+};
+
+const hookMenu: HookMenu = (menu) => {
+  return menuConfig[menu] || null;
+};
+
+export default hookMenu;
