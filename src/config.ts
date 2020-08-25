@@ -1,4 +1,8 @@
-const baseConfig = {
+export type ExtensionConfig = {
+  servicesStatusDataUrl: string;
+};
+
+const baseConfig: ExtensionConfig = {
   servicesStatusDataUrl: "Base Value",
 };
 
