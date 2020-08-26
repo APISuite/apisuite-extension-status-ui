@@ -5,7 +5,6 @@ import ServiceHistory from "components/ServiceHistory";
 
 import { getServicesStatusData, getServicesHistoryData } from "helpers/requests";
 
-//import "./styles.scss";
 import useStyles from "./styles";
 
 const Status: React.FC = () => {
