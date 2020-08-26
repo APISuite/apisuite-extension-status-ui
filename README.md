@@ -34,6 +34,19 @@ npm i --save ../../apisuite-extension-status-ui/dev-symlink-target
 
 The reason for referencing the `dev-symlink-target` folder is because itself references only the `package.json` file and the `build` folder. It leaves the `node_modules` folder out which allows us to use the same React instance that is installed by the APISuite portal for both the portal and the extension.
 
+### Release a new version
+
+To release a new version use [npm's version command](https://docs.npmjs.com/cli/version).
+
+For instance, to create a patch release, run:
+
+    npm version patch
+
+This will build the project, increment the version's patch field, commit these new changes and tag the commit.
+
+Then, don't forget the push the repo and the tags:
+
+    git push && git push origin --tags
 
 ## Production
 
