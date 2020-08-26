@@ -1,7 +1,7 @@
 import { Extension } from "apisuite-extension-ui-types";
 import "./translations";
 import hooks from "./hooks";
-import { ExtensionConfig } from "config";
+import { ExtensionConfig } from "./config";
 import configHelper from "./helpers/config";
 import { name, version } from "../package.json";
 
