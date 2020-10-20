@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "declarationDir": "build",
     "resolveJsonModule": true,
     "module": "esnext",
     "target": "es5",
@@ -11,6 +10,8 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "declarationDir": "dist",
+    "outDir": "dist",
     "baseUrl": ".",
     "paths": {
       "*": ["src/*"]

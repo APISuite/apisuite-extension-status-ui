@@ -1,20 +1,20 @@
 {
-  "name": "apisuite-extension-status-ui",
+  "name": "@apisuite/extension-status-ui",
   "version": "1.0.1",
-  "main": "build/index.js",
-  "module": "build/index.esm.js",
-  "files": [
-    "build"
-  ],
-  "types": "build/src/index.d.ts",
+  "private": true,
+  "main": "index.js",
+  "module": "index.esm.js",
+  "types": "src/index.d.ts",
   "description": "The APISuite Portal UI component of the Status Page extension",
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c && npm run copyDistFiles",
     "build:watch": "rollup -w -c",
     "version": "npm run build",
     "test": "jest",
     "test:watch": "jest --watch",
-    "prepublishOnly": "npm run build"
+    "copyDistFiles": "cat package.json | grep -v \"\\\"private\\\": true\" | grep -v \"\\\"prepublish\\\":\" > dist/package.json && cp -f README.md dist",
+    "prepublish": "echo \"Error: Don't run 'npm publish' in root. Use 'npm run dist' instead.\" && exit 1",
+    "dist": "cd dist && npm publish --access public"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
@@ -25,6 +25,7 @@
     "@material-ui/styles": ">=4.10.0"
   },
   "devDependencies": {
+    "@apisuite/extension-ui-types": "^1.0.4",
     "@babel/core": "^7.10.3",
     "@material-ui/core": "^4.7.2",
     "@material-ui/styles": "^4.10.0",
@@ -36,7 +37,6 @@
     "@types/jest": "^24.0.24",
     "@types/react": "^16.9.12",
     "@types/react-dom": "^16.9.8",
-    "apisuite-extension-ui-types": "github:Cloudoki/apisuite-extension-ui-types#v1.0.2",
     "babel-loader": "^8.1.0",
     "babel-preset-react-app": "^9.1.2",
     "i18next": "^19.6.0",

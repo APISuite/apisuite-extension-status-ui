@@ -6,21 +6,24 @@ import typescript from "rollup-plugin-typescript2";
 import postcss from "rollup-plugin-postcss";
 import copy from "rollup-plugin-copy";
 
-const packageJson = require("./package.json");
+const pkg = require("./package.json");
+const tsconfig = require("./tsconfig.json");
+
+const outDir = tsconfig.compilerOptions.outDir;
 
 export default {
   input: "src/index.ts",
   output: [
     {
-      file: packageJson.main,
+      file: `${outDir}/${pkg.main}`,
       format: "cjs",
-      sourcemap: true
+      sourcemap: true,
     },
     {
-      file: packageJson.module,
+      file: `${outDir}/${pkg.module}`,
       format: "esm",
-      sourcemap: true
-    }
+      sourcemap: true,
+    },
   ],
   plugins: [
     peerDepsExternal(),
@@ -33,15 +36,15 @@ export default {
       targets: [
         {
           src: "src/variables.scss",
-          dest: "build",
-          rename: "variables.scss"
+          dest: outDir,
+          rename: "variables.scss",
         },
         {
           src: "src/typography.scss",
-          dest: "build",
-          rename: "typography.scss"
-        }
-      ]
-    })
-  ]
+          dest: outDir,
+          rename: "typography.scss",
+        },
+      ],
+    }),
+  ],
 };

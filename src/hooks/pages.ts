@@ -1,4 +1,4 @@
-import { HookPages, PageEntry } from "apisuite-extension-ui-types";
+import { HookPages, PageEntry } from "@apisuite/extension-ui-types";
 import Status from "pages/Status";
 
 const pagesConfig: PageEntry[] = [

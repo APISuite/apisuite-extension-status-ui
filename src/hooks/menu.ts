@@ -1,4 +1,4 @@
-import { Menus, MenuEntry, HookMenu } from "apisuite-extension-ui-types";
+import { Menus, MenuEntry, HookMenu } from "@apisuite/extension-ui-types";
 
 type MenuConfig = {
   [menu: string]: MenuEntry[];
