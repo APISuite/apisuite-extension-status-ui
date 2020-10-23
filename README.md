@@ -29,10 +29,8 @@ npm run build:watch
 While developing the UI extension, you might want to test it in your local APISuite portal installation. You can install it there with
 
 ```
-npm i --save ../../apisuite-extension-status-ui/dev-symlink-target
+npm i --save-dev /local/path/to/apisuite-extension-status-ui/dist
 ```
-
-The reason for referencing the `dev-symlink-target` folder is because itself references only the `package.json` file and the `build` folder. It leaves the `node_modules` folder out which allows us to use the same React instance that is installed by the APISuite portal for both the portal and the extension.
 
 ### Release a new version
 
@@ -50,12 +48,8 @@ Then, don't forget the push the repo and the tags:
 
 ## Production
 
-### Hosting via GitHub
-
-This project is hosted on GitHub at https://github.com/Cloudoki/apisuite-extension-status-ui.
-
 To install the latest version of the extension, run:
 
 ```
-npm i --save github:Cloudoki/apisuite-extension-status-ui
+npm i --save-dev @apisuite/extension-status-ui
 ```

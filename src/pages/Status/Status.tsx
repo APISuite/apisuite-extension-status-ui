@@ -38,7 +38,7 @@ const Status: React.FC = () => {
     const fetchingOfServicesStatusData = async () => {
       const currentServicesData = await getServicesStatusData();
 
-      setServicesStatusData(currentServicesData);
+      setServicesStatusData(currentServicesData || []);
     };
 
     fetchingOfServicesStatusData();
@@ -55,7 +55,7 @@ const Status: React.FC = () => {
   }, []);
 
   return (
-    <main className={`${classes.pageWrap} ${classes.wrap}`}>
+    <main className={`page-container ${classes.pageWrap}`}>
       <section className={classes.currentStatusSection}>
         <div className={classes.sectionTitleContainer}>
           <h2 className={classes.sectionTitle}>Current status per service</h2>
